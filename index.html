@@ -40,7 +40,7 @@
 				display: none;
 			}
 
-			*:focus {
+			input:focus {
 				border-color: transparent;
 				outline-style: solid;
 				outline-width: 0.15rem;
@@ -76,6 +76,18 @@
 			defer
 			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 		></script>
+		<script>
+			document.addEventListener("alpine:init", () => {
+				Alpine.data("comingSoon", () => ({
+					email: "",
+					isValidEmail: true,
+					validateEmail() {
+						var regexMail = /\S+@\S+\.\S+/
+						this.isValidEmail = regexMail.test(this.email)
+					},
+				}))
+			})
+		</script>
 	</head>
 	<body
 		class="font-josefinSans text-primary-des-red text-3.5"
@@ -85,6 +97,7 @@
 		<section
 			class="pb-15 pt-7.75 max-w-360 mx-auto"
 			md="relative pb-0 pt-16.25 h-200 bg-no-repeat bg-[url(images/bg-pattern-desktop.svg)] bg-cover"
+			x-data="comingSoon"
 		>
 			<img
 				src="images/logo.svg"
@@ -114,10 +127,15 @@
 					fashion store. Add your email below to stay up-to-date with
 					announcements and our launch deals.
 				</p>
-				<form action="" class="relative mt-8" md="mt-10.5">
+				<form
+					@submit.prevent="validateEmail"
+					action=""
+					class="relative mt-8"
+					md="mt-10.5"
+				>
 					<label for="email" class="sr-only">Email</label>
 					<input
-						type="email"
+						type="text"
 						name="email"
 						placeholder="Email Address"
 						id="email"
@@ -125,8 +143,9 @@
 						aria-label="Email"
 						class="py-3.1 pl-5.5 pr-28 rounded-full w-full border-1 border-primary-des-red placeholder-primary-des-red"
 						md="py-3.75 pl-7.5 pr-37"
+						x-model="email"
 					/>
-					<div>
+					<div x-show="!isValidEmail">
 						<img
 							src="images/icon-error.svg"
 							alt=""
@@ -141,6 +160,8 @@
 					</div>
 					<button
 						class="absolute right-0 top-0 linear-gradient-2 py-3.5 px-6.5 rounded-full shadow-xl shadow-primary-des-red"
+						hover="opacity-80"
+						active="opacity-60"
 						md="py-4.5 px-11"
 					>
 						<img src="images/icon-arrow.svg" alt="" />
