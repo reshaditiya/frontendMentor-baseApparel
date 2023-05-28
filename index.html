@@ -41,10 +41,8 @@
 			}
 
 			input:focus {
-				border-color: transparent;
-				outline-style: solid;
-				outline-width: 0.15rem;
-				outline-color: #d48b8b;
+				outline-style: none;
+				border-color: #f96262;
 			}
 
 			.linear-gradient-1 {
@@ -90,8 +88,8 @@
 		</script>
 	</head>
 	<body
-		class="font-josefinSans text-primary-des-red text-3.5"
-		md="text-4 tracking-0.02"
+		class="font-josefinSans text-primary-des-red text-3.5 leading-5.5"
+		md="text-4 tracking-0.02 leading-6.8"
 		un-cloak
 	>
 		<section
@@ -122,7 +120,7 @@
 						>COMING SOON</span
 					>
 				</h1>
-				<p class="leading-5.5 mt-4" md="mt-5.75 leading-6.75">
+				<p class="mt-4" md="mt-5.75">
 					Hello fellow shoppers! We're currently building our new
 					fashion store. Add your email below to stay up-to-date with
 					announcements and our launch deals.
@@ -131,7 +129,7 @@
 					@submit.prevent="validateEmail"
 					action=""
 					class="relative mt-8"
-					md="mt-10.5"
+					md="mt-10.25"
 				>
 					<label for="email" class="sr-only">Email</label>
 					<input
@@ -141,8 +139,10 @@
 						id="email"
 						maxlength="40"
 						aria-label="Email"
-						class="py-3.1 pl-5.5 pr-28 rounded-full w-full border-1 border-primary-des-red placeholder-primary-des-red"
-						md="py-3.75 pl-7.5 pr-37"
+						class="py-2.75 pl-5.5 pr-28 rounded-full w-full border-2 border-primary-des-red placeholder-primary-des-red"
+						md="py-3.25 pl-7.5 pr-37"
+						hover="border-primary-soft-red"
+						:class="!isValidEmail && 'border-2 border-primary-soft-red'"
 						x-model="email"
 					/>
 					<div x-show="!isValidEmail">
