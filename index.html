@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<title>Frontend Mentor | Base Apparel coming soon page</title>
+
+		<!-- FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- STYLE -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
+		<script>
+			const config = window.__unocss_runtime.uno.config
+			const configColor = config.theme.colors
+			const configFamily = config.theme.fontFamily
+
+			configColor.primaryDesRed = "#ce9797"
+			configColor.primaryHighDesRed = "#db7b7b"
+			configColor.primarySoftRed = "#f96262"
+			configColor.neutralGrayRed = "#413a3a"
+			configFamily.josefinSans = '"Josefin Sans",' + configFamily.sans
+		</script>
+		<style>
+			[un-cloak] {
+				display: none;
+			}
+
+			.linear-gradient-1 {
+				background: linear-gradient(
+					135deg,
+					hsl(0, 0%, 100%),
+					hsl(0, 100%, 98%)
+				);
+			}
+			.linear-gradient-2 {
+				background: linear-gradient(
+					135deg,
+					hsl(0, 80%, 86%),
+					hsl(0, 74%, 74%)
+				);
+			}
+			.sr-only {
+				position: absolute;
+				left: -10000px;
+				top: auto;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+			}
+		</style>
+
+		<!-- JS -->
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
+	</head>
+	<body class="font-josefinSans text-primary-des-red text-3.5" un-cloak>
+		<section class="mt-7.75 mb-15">
+			<img src="images/logo.svg" alt="" class="ml-8 h-5.25" />
+			<div
+				class="h-62.5 bg-[url(images/hero-mobile.jpg)] bg-no-repeat bg-cover w-full mt-8"
+			></div>
+			<div class="px-8 mt-16">
+				<h1
+					class="mx-auto flex flex-col text-10.25 tracking-2.5 leading-10.5"
+				>
+					<span class="font-300 text-center">WE'RE</span
+					><span class="font-600 text-center text-neutral-gray-red"
+						>COMING SOON</span
+					>
+				</h1>
+				<p class="text-center leading-5.5 mt-4">
+					Hello fellow shoppers! We're currently building our new
+					fashion store. Add your email below to stay up-to-date with
+					announcements and our launch deals.
+				</p>
+				<form action="" class="relative mt-8">
+					<label for="email" class="sr-only">Email</label>
+					<input
+						type="email"
+						name="email"
+						placeholder="Email Address"
+						id="email"
+						aria-label="Email"
+						class="py-3.1 px-5.5 rounded-full w-full border-1 border-primary-des-red placeholder-primary-des-red"
+					/>
+					<button
+						class="absolute right-0 linear-gradient-2 py-3.5 px-6.5 rounded-full"
+					>
+						<img src="images/icon-arrow.svg" alt="" />
+					</button>
+				</form>
+			</div>
+		</section>
+	</body>
+</html>
