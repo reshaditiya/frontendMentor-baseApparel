@@ -31,7 +31,6 @@
 			const configFamily = config.theme.fontFamily
 
 			configColor.primaryDesRed = "#ce9797"
-			configColor.primaryHighDesRed = "#db7b7b"
 			configColor.primarySoftRed = "#f96262"
 			configColor.neutralGrayRed = "#413a3a"
 			configFamily.josefinSans = '"Josefin Sans",' + configFamily.sans
@@ -39,6 +38,13 @@
 		<style>
 			[un-cloak] {
 				display: none;
+			}
+
+			*:focus {
+				border-color: transparent;
+				outline-style: solid;
+				outline-width: 0.15rem;
+				outline-color: #d48b8b;
 			}
 
 			.linear-gradient-1 {
@@ -71,38 +77,71 @@
 			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 		></script>
 	</head>
-	<body class="font-josefinSans text-primary-des-red text-3.5" un-cloak>
-		<section class="mt-7.75 mb-15">
-			<img src="images/logo.svg" alt="" class="ml-8 h-5.25" />
+	<body
+		class="font-josefinSans text-primary-des-red text-3.5"
+		md="text-4 tracking-0.02"
+		un-cloak
+	>
+		<section
+			class="pb-15 pt-7.75 max-w-360 mx-auto"
+			md="relative pb-0 pt-16.25 h-200 bg-no-repeat bg-[url(images/bg-pattern-desktop.svg)] bg-cover"
+		>
+			<img
+				src="images/logo.svg"
+				alt=""
+				class="ml-8 h-5.25"
+				md="ml-18.5 h-8.25"
+			/>
 			<div
 				class="h-62.5 bg-[url(images/hero-mobile.jpg)] bg-no-repeat bg-cover w-full mt-8"
+				md="bg-[url(images/hero-desktop.jpg)] absolute right-0 top-0 w-1/2 max-w-152.5 h-full mt-0 z-1"
 			></div>
-			<div class="px-8 mt-16">
+			<div
+				class="px-8 mt-16 text-center"
+				md="px-0 mt-33.5 ml-18.5 text-left w-1/3 max-w-111.25 z-2"
+			>
 				<h1
 					class="mx-auto flex flex-col text-10.25 tracking-2.5 leading-10.5"
+					md="text-16 tracking-4.25 leading-17"
 				>
-					<span class="font-300 text-center">WE'RE</span
-					><span class="font-600 text-center text-neutral-gray-red"
+					<span class="font-300">WE'RE</span
+					><span class="font-600 text-neutral-gray-red"
 						>COMING SOON</span
 					>
 				</h1>
-				<p class="text-center leading-5.5 mt-4">
+				<p class="leading-5.5 mt-4" md="mt-5.75 leading-6.75">
 					Hello fellow shoppers! We're currently building our new
 					fashion store. Add your email below to stay up-to-date with
 					announcements and our launch deals.
 				</p>
-				<form action="" class="relative mt-8">
+				<form action="" class="relative mt-8" md="mt-10.5">
 					<label for="email" class="sr-only">Email</label>
 					<input
 						type="email"
 						name="email"
 						placeholder="Email Address"
 						id="email"
+						maxlength="40"
 						aria-label="Email"
-						class="py-3.1 px-5.5 rounded-full w-full border-1 border-primary-des-red placeholder-primary-des-red"
+						class="py-3.1 pl-5.5 pr-28 rounded-full w-full border-1 border-primary-des-red placeholder-primary-des-red"
+						md="py-3.75 pl-7.5 pr-37"
 					/>
+					<div>
+						<img
+							src="images/icon-error.svg"
+							alt=""
+							class="absolute top-3.25 right-20"
+							md="top-4.25 right-29.25"
+						/>
+						<p
+							class="text-left text-3 mt-2 ml-8 tracking-0.12 text-primary-soft-red"
+						>
+							Please provide a valid email
+						</p>
+					</div>
 					<button
-						class="absolute right-0 linear-gradient-2 py-3.5 px-6.5 rounded-full"
+						class="absolute right-0 top-0 linear-gradient-2 py-3.5 px-6.5 rounded-full shadow-xl shadow-primary-des-red"
+						md="py-4.5 px-11"
 					>
 						<img src="images/icon-arrow.svg" alt="" />
 					</button>
